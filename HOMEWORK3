@@ -1,1 +1,677 @@
+// Name: Rohail Tahir
+// Programming Language: Java
+// IDE / Editor: JDoodle
 
+/*
+Homework 3 - Abstract Data Types: Stacks and Queues
+
+PART 1 - DEVELOPMENT ENVIRONMENT
+
+Name: Rohail Tahir
+Programming Language: Java
+IDE / Editor: JDoodle
+
+PART 2 - ADT QUESTIONS
+
+Question 1:
+What does ADT stand for?
+Answer:
+ADT stands for Abstract Data Type.
+
+Question 2:
+In your own words, what is an Abstract Data Type?
+Answer:
+An Abstract Data Type describes what a data structure is supposed
+to do and what operations it supports without focusing on exactly
+how the data structure is built.
+
+Question 3:
+What is the difference between an ADT and its implementation?
+Answer:
+An ADT describes WHAT the data structure should do, while the
+implementation describes HOW the data structure is actually built
+and works in the program.
+
+Question 4:
+Can two programmers create different implementations of the same ADT?
+Explain your answer.
+Answer:
+Yes. Two programmers can create different implementations of the
+same ADT. They can use different ways to store and manage the data
+as long as both implementations follow the same rules and operations
+of the ADT.
+
+Question 5:
+If one programmer creates a Stack using an array and another creates
+a Stack using a linked list, are both still Stacks? Explain why.
+Answer:
+Yes, both are still Stacks. Even though one uses an array and the
+other uses a linked list, they both follow the Stack ADT and its
+Last In, First Out behavior. The implementation is different, but
+the ADT is still the same.
+
+PART 3 - STACK ADT
+
+A Stack follows LIFO, which means Last In, First Out. This means the last item added to the Stack is the first item that gets removed.
+
+PART 4 - REQUIRED STACK OPERATIONS
+
+The Stack implementation contains:
+
+push()
+Adds a new item to the Stack.
+
+pop()
+Removes and returns the most recently added item.
+
+peek()
+Returns the top item without removing it.
+
+isEmpty()
+Checks whether the Stack is empty.
+
+PART 5 - BUILD YOUR STACK
+
+The values are added in this exact order:
+
+15
+25
+35
+45
+55
+
+After adding the values, the Stack looks like:
+
+55
+45
+35
+25
+15
+
+55 is the top item.
+
+PART 6 - TEST YOUR STACK
+
+The following values are pushed:
+
+15
+25
+35
+45
+55
+
+peek() returns:
+55
+
+The first pop() returns:
+55
+
+The second pop() returns:
+45
+
+The next peek() returns:
+35
+
+isEmpty() returns:
+false
+
+PART 7 - STACK OUTPUT
+
+STACK DEMONSTRATION
+Adding:
+15
+25
+35
+45
+55
+
+Top item:
+55
+
+Removing:
+55
+
+Removing:
+45
+
+New top:
+35
+
+Is Stack empty?
+false
+
+PART 8 - STACK QUESTIONS
+
+Question 6:
+What does LIFO mean?
+Answer:
+LIFO means Last In, First Out. The last item added to the Stack
+is the first item that gets removed.
+
+Question 7:
+Why did 55 get removed before 15?
+Answer:
+55 was removed before 15 because 55 was the last value added to
+the Stack. Since a Stack follows LIFO, the most recently added
+value is removed first.
+
+Question 8:
+If the Stack contains A, B, C, D and D was added last, which item
+should pop() remove first?
+Answer:
+pop() should remove D first because D was the last item added.
+
+Question 9:
+Give one real-world or software example where a Stack could be useful.
+Answer:
+A browser's Back button is an example of where a Stack could be
+useful. When different pages are visited, they can be stored in
+the order they were visited. When the Back button is pressed, the
+most recently visited page is the first page returned to. This
+follows LIFO behavior.
+
+PART 9 - QUEUE ADT
+
+A Queue follows FIFO, which means First In, First Out. This means the first item added to the Queue is the first item that gets removed.
+
+PART 10 - REQUIRED QUEUE OPERATIONS
+
+The Queue implementation contains:
+
+enqueue()
+Adds an item to the back of the Queue.
+
+dequeue()
+Removes an item from the front of the Queue.
+
+peek()
+Returns the item at the front without removing it.
+
+isEmpty()
+Checks whether the Queue is empty.
+
+PART 11 - BUILD YOUR QUEUE
+
+The values are added in this exact order:
+
+15
+25
+35
+45
+55
+
+Conceptually, the Queue looks like:
+
+Front -> 15 -> 25 -> 35 -> 45 -> 55 <- Back
+
+PART 12 - TEST YOUR QUEUE
+
+The following values are enqueued:
+
+15
+25
+35
+45
+55
+
+peek() returns:
+15
+
+The first dequeue() returns:
+15
+
+The second dequeue() returns:
+25
+
+The next peek() returns:
+35
+
+isEmpty() returns:
+false
+
+PART 13 - QUEUE OUTPUT
+
+QUEUE DEMONSTRATION
+Adding:
+15
+25
+35
+45
+55
+
+Front item:
+15
+
+Removing:
+15
+
+Removing:
+25
+
+New front:
+35
+
+Is Queue empty?
+false
+
+PART 14 - QUEUE QUESTIONS
+
+Question 10:
+What does FIFO mean?
+Answer:
+FIFO means First In, First Out. The first item added to the Queue
+is the first item that gets removed.
+
+Question 11:
+Why was 15 removed before 55?
+Answer:
+15 was removed before 55 because 15 was added to the Queue first.
+Since a Queue follows FIFO, the first value added is the first
+value removed.
+
+Question 12:
+If customers enter a line in this order:
+Alex
+Maria
+John
+Sarah
+
+Who should leave the Queue first?
+Answer:
+Alex should leave the Queue first because Alex was the first person
+to enter the line.
+
+Question 13:
+Give one real-world or software example where a Queue could be useful.
+Answer:
+A printer is a good example of a Queue. If multiple students send
+documents to a printer, the first document sent should normally be
+printed first. The other documents wait behind it in the order they
+were sent. This follows FIFO behavior.
+
+PART 15 - STACK VS QUEUE
+
+Scenario 1 - Undo Feature
+
+Answer:
+Stack
+An Undo feature should use a Stack because the most recent action
+should be undone first. This follows LIFO behavior.
+
+
+Scenario 2 - Printer
+
+Answer: Queue
+A printer should use a Queue because the first document submitted
+should normally be the first document printed. This follows FIFO
+behavior.
+
+
+Scenario 3 - Browser Back Button
+
+Pages visited:
+
+Google
+YouTube
+GitHub
+Amazon
+
+Answer:
+If the Back button is clicked while on Amazon, GitHub should appear
+first. This resembles a Stack because GitHub was the page visited immediately
+before Amazon. The most recently visited previous page is the first
+one returned to.
+
+
+Scenario 4 - Customer Service
+
+Answer: Queue
+Customer service should use a Queue because the person who arrived
+first should normally be helped first. This follows FIFO behavior.
+
+Scenario 5 - Plates
+Answer: Stack
+
+A pile of plates represents a Stack because the last plate placed
+on top is normally the first plate removed. This follows LIFO behavior.
+
+PART 16 - PREDICT THE OUTPUT
+
+STACK
+
+Start with an empty Stack:
+
+push(7)
+push(12)
+push(18)
+pop()
+push(22)
+peek()
+
+
+Question 14:
+What does pop() return?
+Answer:
+pop() returns 18.
+
+Question 15:
+What does the final peek() return?
+Answer:
+The final peek() returns 22.
+
+QUEUE
+
+Start with an empty Queue:
+
+enqueue(7)
+enqueue(12)
+enqueue(18)
+dequeue()
+enqueue(22)
+peek()
+
+Question 16:
+What does dequeue() return?
+Answer:
+dequeue() returns 7.
+
+Question 17:
+What does the final peek() return?
+Answer:
+The final peek() returns 12.
+
+PART 17 - COMPARE THE ADTs
+
+Feature: Rule
+Stack: LIFO
+Queue: FIFO
+
+Feature: Add operation
+Stack: push()
+Queue: enqueue()
+
+Feature: Remove operation
+Stack: pop()
+Queue: dequeue()
+
+Feature: View next item
+Stack: peek()
+Queue: peek()
+
+Feature: First item removed
+Stack: Most recently added item
+Queue: First item added
+
+PART 18 - CONNECT THE ADT TO THE IMPLEMENTATION
+
+Question 18:
+If you implement a Stack using an array, which part is the ADT?
+Answer:
+The Stack itself, including its rules and operations such as push(),
+pop(), peek(), and isEmpty(), is the ADT. These describe what the
+Stack is supposed to do.
+
+Question 19:
+Which part is the implementation?
+Answer:
+The array and the code used to store and manage the values inside
+the array are the implementation. They describe how the Stack is
+actually built.
+
+Question 20:
+If you replace the array with a linked list but keep the same Stack
+operations, did the ADT change? Explain.
+Answer:
+No, the ADT did not change. It is still a Stack because it still
+has the same operations and follows LIFO behavior. Only the
+implementation changed because a linked list is being used instead
+of an array.
+
+PART 19 - PROGRAM REQUIREMENTS
+
+The program contains a Stack with:
+
+push()
+pop()
+peek()
+isEmpty()
+
+The program also contains a Queue with:
+
+enqueue()
+dequeue()
+peek()
+isEmpty()
+
+The program demonstrates:
+
+Stack = LIFO
+Queue = FIFO
+
+PART 20 - CODE ORGANIZATION
+
+
+The Java code below is separated into clearly labeled Stack,
+Queue, Stack Demonstration, and Queue Demonstration sections.
+Meaningful variable names are used throughout the program.
+*/
+
+
+public class Homework3 {
+
+    // Stack
+    static class MyStack {
+
+        private int[] items;
+        private int top;
+
+        public MyStack() {
+            items = new int[10];
+            top = -1;
+        }
+
+        // Add a value to the top of the stack
+        public void push(int value) {
+            items[++top] = value;
+        }
+
+        // Remove and returns the top value
+        public int pop() {
+
+            if (isEmpty()) {
+                throw new IllegalStateException("Stack is empty");
+            }
+
+            return items[top--];
+        }
+
+        // Look at the top value without removing it
+        public int peek() {
+
+            if (isEmpty()) {
+                throw new IllegalStateException("Stack is empty");
+            }
+
+            return items[top];
+        }
+
+        // Check if the stack is empty
+        public boolean isEmpty() {
+            return top == -1;
+        }
+    }
+
+    // Queue
+
+    static class MyQueue {
+
+        private int[] items;
+        private int front;
+        private int back;
+
+        public MyQueue() {
+            items = new int[10];
+            front = 0;
+            back = 0;
+        }
+
+        // Add a value to the back of the queue
+        public void enqueue(int value) {
+            items[back++] = value;
+        }
+
+        // Remove and return the value at the front
+        public int dequeue() {
+
+            if (isEmpty()) {
+                throw new IllegalStateException("Queue is empty");
+            }
+
+            return items[front++];
+        }
+
+        // Look at the front value without removing it
+        public int peek() {
+
+            if (isEmpty()) {
+                throw new IllegalStateException("Queue is empty");
+            }
+
+            return items[front];
+        }
+
+        // Check if the queue is empty
+        public boolean isEmpty() {
+            return front == back;
+        }
+    }
+
+
+    public static void main(String[] args) {
+
+        // Stack Demonstration
+
+        MyStack stack = new MyStack();
+
+        System.out.println("STACK DEMONSTRATION");
+        System.out.println("Adding:");
+
+        stack.push(15);
+        System.out.println(15);
+
+        stack.push(25);
+        System.out.println(25);
+
+        stack.push(35);
+        System.out.println(35);
+
+        stack.push(45);
+        System.out.println(45);
+
+        stack.push(55);
+        System.out.println(55);
+
+        System.out.println("\nTop item:");
+        System.out.println(stack.peek());
+
+        System.out.println("\nRemoving:");
+        System.out.println(stack.pop());
+
+        System.out.println("\nRemoving:");
+        System.out.println(stack.pop());
+
+        System.out.println("\nNew top:");
+        System.out.println(stack.peek());
+
+        System.out.println("\nIs Stack empty?");
+        System.out.println(stack.isEmpty());
+
+        // Queue Demonstration
+
+        MyQueue queue = new MyQueue();
+
+        System.out.println("\nQUEUE DEMONSTRATION");
+        System.out.println("Adding:");
+
+        queue.enqueue(15);
+        System.out.println(15);
+
+        queue.enqueue(25);
+        System.out.println(25);
+
+        queue.enqueue(35);
+        System.out.println(35);
+
+        queue.enqueue(45);
+        System.out.println(45);
+
+        queue.enqueue(55);
+        System.out.println(55);
+
+        System.out.println("\nFront item:");
+        System.out.println(queue.peek());
+
+        System.out.println("\nRemoving:");
+        System.out.println(queue.dequeue());
+
+        System.out.println("\nRemoving:");
+        System.out.println(queue.dequeue());
+
+        System.out.println("\nNew front:");
+        System.out.println(queue.peek());
+
+        System.out.println("\nIs Queue empty?");
+        System.out.println(queue.isEmpty());
+    }
+}
+
+
+/*
+PROGRAM OUTPUT
+
+STACK DEMONSTRATION
+Adding:
+15
+25
+35
+45
+55
+
+Top item:
+55
+
+Removing:
+55
+
+Removing:
+45
+
+New top:
+35
+
+Is Stack empty?
+false
+
+QUEUE DEMONSTRATION
+Adding:
+15
+25
+35
+45
+55
+
+Front item:
+15
+
+Removing:
+15
+
+Removing:
+25
+
+New front:
+35
+
+Is Queue empty?
+false
+*/
